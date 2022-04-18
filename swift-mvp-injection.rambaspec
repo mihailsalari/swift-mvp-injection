@@ -1,0 +1,22 @@
+# Template information section
+name: "swift-mvp-injection"
+summary: "A Swift MVP + injection module template with UIViewController playing as a View."
+author: "Mihail Salari"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Builder
+- {name: Builder/Builder.swift, path: Code/Builder/builder.swift.liquid}
+
+# Model layer
+- {name: ViewModel/ViewModel.swift, path: Code/Model/model.swift.liquid}
+
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+- {name: View/ViewController.storyboard, path: Code/View/viewcontroller.storyboard.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}

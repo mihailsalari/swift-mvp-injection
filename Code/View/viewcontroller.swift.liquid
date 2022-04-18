@@ -1,0 +1,23 @@
+import UIKit
+
+protocol {{ module_info.name }}ViewControllerProtocol: AnyObject {
+  func prepare(with viewModel: {{ module_info.name }}ViewModel)
+}
+
+class {{ module_info.name }}ViewController: UIViewController, {{ module_info.name }}ViewControllerProtocol {
+  var presenter: {{ module_info.name }}PresenterProtocol!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+    setupViews()
+  }
+
+  private func setupViews() {
+    // Setup views
+  }
+
+  func prepare(with viewModel: {{ module_info.name }}ViewModel) {
+    title = viewModel.title
+  }
+}
