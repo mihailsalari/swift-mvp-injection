@@ -9,7 +9,7 @@
 **Add template in your** [Rambafile](https://github.com/rambler-digital-solutions/Generamba/wiki/Rambafile-Structure)**:**
 ```
 templates:
- - {name: swift-mvp, git: 'https://github.com/mihailsalari/swift-mvp.git'}
+ - {name: swift-mvp-injection, git: 'https://github.com/mihailsalari/swift-mvp-injection.git'}
 ```
 
 **Install template:**
@@ -25,7 +25,7 @@ generamba gen [MODULE_NAME] [TEMPLATE_NAME]
 To create Splash module:
 
 ```
-generamba gen Splash swift-mvp
+generamba gen Splash swift-mvp-injection
 ```
 
 It will create the Login module in your project target, as well as in your tests target.
