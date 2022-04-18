@@ -10,6 +10,8 @@ class {{ module_info.name }}ViewController: UIViewController, {{ module_info.nam
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
+    presenter.present()
     setupViews()
   }
 
