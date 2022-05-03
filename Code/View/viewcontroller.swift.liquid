@@ -1,25 +1,25 @@
 import UIKit
 
 protocol {{ module_info.name }}ViewControllerProtocol: AnyObject {
-  func prepare(with viewModel: {{ module_info.name }}ViewModel)
+    func prepare(with viewModel: {{ module_info.name }}ViewModel)
 }
 
 class {{ module_info.name }}ViewController: UIViewController, {{ module_info.name }}ViewControllerProtocol {
-  var presenter: {{ module_info.name }}PresenterProtocol!
+    var presenter: {{ module_info.name }}PresenterProtocol!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-    
-    presenter.present()
-    setupViews()
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
 
-  private func setupViews() {
-    // Setup views
-  }
+        presenter.present()
+        setupViews()
+    }
 
-  func prepare(with viewModel: {{ module_info.name }}ViewModel) {
-    title = viewModel.title
-  }
+    private func setupViews() {
+        // Setup views
+    }
+
+    func prepare(with viewModel: {{ module_info.name }}ViewModel) {
+        title = viewModel.title
+    }
 }

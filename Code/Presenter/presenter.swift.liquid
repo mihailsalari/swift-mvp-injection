@@ -1,17 +1,17 @@
 import UIKit
 
 protocol {{ module_info.name }}PresenterProtocol {
-  func present()
+    func present()
 }
 
 class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
-  private weak var view: ({{ module_info.name }}ViewControllerProtocol & UIViewController)!
+    private weak var view: (FaceDetectionViewControllerProtocol & UIViewController)!
 
-  init(view: {{ module_info.name }}ViewControllerProtocol & UIViewController) {
-    self.view = view
-  }
+    init(view: {{ module_info.name }}ViewControllerProtocol & UIViewController) {
+        self.view = view
+    }
 
-  func present() {
-    // Fetch data or smth else...
-  }
+    func present() {
+        // Fetch data or smth else...
+    }
 }

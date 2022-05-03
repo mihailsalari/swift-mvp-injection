@@ -2,34 +2,34 @@ import UIKit
 import Swinject
 
 protocol {{ module_info.name }}BuilderProtocol {
-  func buildViewController() -> {{ module_info.name }}ViewController!
+    func buildViewController() -> {{ module_info.name }}ViewController!!
 }
 
-class {{ module_info.name }}Builder: {{ module_info.name }}BuilderProtocol {
-  let container = Container()
+class FaceDetectionBuilder: FaceDetectionBuilderProtocol {
+    let container = Container()
 
-  func buildViewController() -> {{ module_info.name }}ViewController! {
-    container.register({{ module_info.name }}ViewController.self) { _ in
-      {{ module_info.name }}Builder.instantiateViewController()
+    func buildViewController() -> {{ module_info.name }}ViewController! {
+        container.register({{ module_info.name }}ViewController.self) { _ in
+            {{ module_info.name }}Builder.instantiateViewController()
 
-    }.initCompleted { r, h in
-      h.presenter = r.resolve({{ module_info.name }}Presenter.self)
+        }.initCompleted { r, h in
+            h.presenter = r.resolve({{ module_info.name }}Presenter.self)
+        }
+
+        container.register({{ module_info.name }}Presenter.self) { c in
+            {{ module_info.name }}Presenter(view: c.resolve({{ module_info.name }}ViewController.self)!)
+        }
+
+        return container.resolve({{ module_info.name }}ViewController.self)!
     }
 
-    container.register({{ module_info.name }}Presenter.self) { c in
-      {{ module_info.name }}Presenter(view: c.resolve({{ module_info.name }}ViewController.self)!)
+    deinit {
+        container.removeAll()
     }
 
-    return container.resolve({{ module_info.name }}ViewController.self)!
-  }
-
-  deinit {
-    container.removeAll()
-  }
-
-  private static func instantiateViewController() -> {{ module_info.name }}ViewController {
-    let identifier = String(describing: {{ module_info.name }}ViewController.self)
-    let storyboard = UIStoryboard(name: identifier, bundle: .main)
-    return storyboard.instantiateViewController(withIdentifier: identifier) as! {{ module_info.name }}ViewController
-  }
+    private static func instantiateViewController() -> {{ module_info.name }}ViewController {
+        let identifier = String(describing: {{ module_info.name }}ViewController.self)
+        let storyboard = UIStoryboard(name: identifier, bundle: .main)
+        return storyboard.instantiateViewController(withIdentifier: identifier) as! {{ module_info.name }}ViewController
+    }
 }
