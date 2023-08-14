@@ -1,40 +1,52 @@
-**[MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)** is a derivation of the model–view–controller architectural pattern, and is used mostly for building user interfaces. In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all presentation logic is pushed to the presenter.</br>
+# Swift MVP + Dependency Injection Architecture
+
+**[MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)** (Model-View-Presenter) is a derivation of the model–view–controller architectural pattern, primarily used for building user interfaces. In MVP, the presenter embodies the "middle-man" functionality, consolidating all presentation logic.
 
 [![Swift Version](https://img.shields.io/badge/Swift-2.2--4.x-F16D39.svg?style=flat)](https://developer.apple.com/swift)
 
-### How do I get set up? ###
+## Tutorials 📚
 
-# Installation
+Deep dive into the structure and benefits of this architecture with these articles:
+- [MVP + Dependency Injection: The Perfect Match for Scalable iOS Apps](https://medium.com/@mihail_salari/mvp-dependency-injection-the-perfect-match-for-scalable-ios-apps-51360219a28a)
+- [Efficient Dependency Management in iOS: Introducing AppContainer for MVP+DI Architecture](https://medium.com/@mihail_salari/efficient-dependency-management-in-ios-introducing-appcontainer-for-mpv-di-architecture-fa6f691381b7)
 
-**Add template in your** [Rambafile](https://github.com/rambler-digital-solutions/Generamba/wiki/Rambafile-Structure)**:**
-```
+## Setup 🛠
+
+### Installation
+
+1. **Add template to your** [Rambafile](https://github.com/rambler-digital-solutions/Generamba/wiki/Rambafile-Structure):
+```yaml
 templates:
  - {name: swift-mvp-injection, git: 'https://github.com/mihailsalari/swift-mvp-injection.git'}
 ```
 
-**Install template:**
-```
+2. **Install the template**:
+```bash
 generamba template install
 ```
-# Usage
-```
+
+### Usage
+
+Generate your desired module with the following command:
+```bash
 generamba gen [MODULE_NAME] [TEMPLATE_NAME]
 ```
-**Example:**
 
-To create Splash module:
+**Example**:
 
-```
+To create a Splash module:
+```bash
 generamba gen Splash swift-mvp-injection
 ```
 
-It will create the Login module in your project target, as well as in your tests target.
+This will generate the `Splash` module in both your project and tests target.
 
-### Contribution guidelines ###
+## Contribute 🤝
 
-* Feel free to contribute.
+We encourage everyone to contribute and make improvements. Feel free to submit a pull request or provide feedback!
 
-### Question? ###
-If you have a general question and hesitate to submit an issue at GitHub, you can feel free to ask the question at [Stack Overflow](http://stackoverflow.com/). The author of this module MVP tag there to answer as quickly as possible.
+## Questions ❓
 
-* info@mihailsalari.com
+For general inquiries, consider asking on [Stack Overflow](http://stackoverflow.com/). The author regularly monitors the MVP tag there for prompt responses. Alternatively, reach out at:
+
+- 📧 [info@mihailsalari.com](mailto:info@mihailsalari.com)
